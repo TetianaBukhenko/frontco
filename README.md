@@ -3,7 +3,7 @@
 This is a test task for Frontco. 
 
 ## Demo
-https://test-task-undertone.vercel.app/
+https://frontco.vercel.app/
 
 ## Technologies
 JavaScript, Vue, CSS, Bootstrap, HTML.
