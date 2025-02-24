@@ -60,35 +60,17 @@ const isSelected = (image) => {
 </template>
 
 <style scoped>
-.slider-container {
-  min-height: 70vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  gap: 24px;
-  position: relative;
-  border-radius: 50px;
-  box-shadow:
-    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-
-  @media (min-width: 864px) {
-    padding: 24px;
-  }
-}
-
 .slider {
   display: flex;
   width: 80vw;
-  height: 100%;
+  height: 80vw;
   gap: 12px;
 
   overflow: hidden;
 
   @media (min-width: 864px) {
     /* padding-inline: 100px; */
+    height: auto;
     width: calc(var(--image-width) * 2 + 12px);
     align-self: center;
   }
@@ -103,7 +85,7 @@ const isSelected = (image) => {
 
 .slide {
   width: 80vw;
-  height: 80vh;
+  height: 80vw;
   border-radius: 50px;
   transition-duration: 1s;
 

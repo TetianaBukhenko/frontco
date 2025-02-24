@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import axios from 'axios'
 import SelectedImages from './components/SelectedImages.vue'
 import CarouselComponent from './CarouselComponent.vue'
@@ -79,7 +79,6 @@ const addImage = (image) => {
           :imagesPerView="imagesPerView"
           @add-image="addImage($event)"
         />
-
         <button @click="changeIndex('increase')" class="button button-right">></button>
       </template>
     </div>
@@ -101,7 +100,6 @@ const addImage = (image) => {
 
 <style scoped>
 .slider-container {
-  min-height: 70vh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -126,7 +124,8 @@ const addImage = (image) => {
   padding: 0;
   background: none;
   border-radius: 50%;
-  backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
   border: none;
   position: absolute;
   z-index: 5;
@@ -142,11 +141,25 @@ const addImage = (image) => {
 }
 
 .button-left {
-  left: 32px;
+  bottom: 12px;
+  transform: translateX(-80%);
+
+  @media (min-width: 864px) {
+    transform: translateX(0);
+    left: 32px;
+    bottom: auto;
+  }
 }
 
 .button-right {
-  right: 32px;
+  bottom: 12px;
+  transform: translateX(80%);
+
+  @media (min-width: 864px) {
+    transform: translateX(0);
+    right: 32px;
+    bottom: auto;
+  }
 }
 
 .modal-button {
